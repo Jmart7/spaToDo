@@ -9,9 +9,10 @@ export class todoRepository {
         return this.todosArray;
     }
 
-    addTodos(newTodo: TodoDTO) {
+    addTodos(newTodo: string) {
         let todoToBeAdded = new TodoDTO((this.todosArray.length + 1).toString(), newTodo);
-        return this.todosArray.push(todoToBeAdded);
+        this.todosArray.push(todoToBeAdded);
+        return this.todosArray.
     }
 
 

@@ -17,7 +17,7 @@ export class TodoController {
         return this.TodoService.getTodos();
     }
     @Post()
-    createTodo(@Body() createTodo: TodoDTO) : TodoDTO {
+    createTodo(@Body() createTodo: string) {
     return this.TodoService.newTodo(createTodo);
     }
 }

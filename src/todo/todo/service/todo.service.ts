@@ -13,7 +13,7 @@ export class TodoService {
         return this.todoRepository.getTodos();
     }
 
-    newTodo(newTodo: TodoDTO) {
+    newTodo(newTodo: string) {
         return this.todoRepository.addTodos(newTodo);
     }
 }
