@@ -1,30 +1,59 @@
 import { TodoDTO } from "../todo.dto";
-import { todos } from "../todos-mock";
 import {todoRepository} from "../repository/todo.repository"
 import { Injectable } from "@nestjs/common";
+import { Repository } from "typeorm";
+import { InjectRepository } from "@nestjs/typeorm";
 
 @Injectable()
 export class TodoService {
     constructor(
+        @InjectRepository(TodoDTO)
         private todoRepository: todoRepository,
     ){}
 
-    getTodos(): TodoDTO[] {
+    getTodos(): Promise<TodoDTO[]> {
         return this.todoRepository.getTodos();
     }
 
-    newTodo(newTodo: TodoDTO) {
+    newTodo(newTodo: string) {
         return this.todoRepository.addTodos(newTodo);
     }
 
-    editTodo(idToEdit: number, updatedTodo: TodoDTO) {
-        return this.todoRepository.editTodo(idToEdit, updatedTodo)
+    editTodo(idToEdit: number, updatedTodo: string) {
+        return this.todoRepository.updateTodos(idToEdit, updatedTodo)
     }
 
-    deleteTodo(idToDelete: number, deleteTodo: TodoDTO){
-        return this.todoRepository.deleteTodo(idToDelete, deleteTodo);
+    deleteTodo(idToDelete: number){
+        return this.todoRepository.deleteTodos(idToDelete);
     }
 }
+
+
+
+
+// @Injectable()
+// export class TodoService {
+//     constructor(
+//         @InjectRepository(TodoDTO)
+//         private todoRepository: todoRepository,
+//     ){}
+
+//     getTodos(): TodoDTO[] {
+//         return this.todoRepository.getTodos();
+//     }
+
+//     newTodo(newTodo: TodoDTO) {
+//         return this.todoRepository.addTodos(newTodo);
+//     }
+
+//     editTodo(idToEdit: number, updatedTodo: TodoDTO) {
+//         return this.todoRepository.editTodo(idToEdit, updatedTodo)
+//     }
+
+//     deleteTodo(idToDelete: number, deleteTodo: TodoDTO){
+//         return this.todoRepository.deleteTodo(idToDelete, deleteTodo);
+//     }
+// }
 
 
 // const newTodo: TodoDTO = {

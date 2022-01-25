@@ -1,7 +1,6 @@
 import { Controller, Get, Body, Post, Injectable, Put, Param, ParseIntPipe, Delete } from '@nestjs/common';
 import { get } from 'http';
 import { TodoDTO } from '../todo.dto';
-import { todos } from '../todos-mock';
 import {TodoService} from '../service/todo.service'
 // let todosData = todos;
 
@@ -13,21 +12,21 @@ export class TodoController {
         private TodoService: TodoService,
     ){}
     @Get()
-    getTodos() : TodoDTO[]{
+    getTodos() : Promise<TodoDTO[]>{
         return this.TodoService.getTodos();
     }
     @Post()
-    createTodo(@Body() createTodo: TodoDTO) {
+    createTodo(@Body() createTodo: string) {
     return this.TodoService.newTodo(createTodo);
     }
     @Put(":id")
     // @Param(':id')
-    updateTodo(@Body() updateTodo: TodoDTO, @Param() params) {
+    updateTodo(@Body() updateTodo: string, @Param() params) {
         return this.TodoService.editTodo(params.id, updateTodo);
     }
     @Delete(':id')
-    deleteTodo(@Body() deleteTodo: TodoDTO, @Param() params) {
-        return this.TodoService.deleteTodo(params.id, deleteTodo);
+    deleteTodo(@Param() params) {
+        return this.TodoService.deleteTodo(params.id);
     }
 }
 
