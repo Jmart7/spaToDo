@@ -13,8 +13,16 @@ export class TodoService {
         return this.todoRepository.getTodos();
     }
 
-    newTodo(newTodo: string) {
+    newTodo(newTodo: TodoDTO) {
         return this.todoRepository.addTodos(newTodo);
+    }
+
+    editTodo(idToEdit: number, updatedTodo: TodoDTO) {
+        return this.todoRepository.editTodo(idToEdit, updatedTodo)
+    }
+
+    deleteTodo(idToDelete: number, deleteTodo: TodoDTO){
+        return this.todoRepository.deleteTodo(idToDelete, deleteTodo);
     }
 }
 
