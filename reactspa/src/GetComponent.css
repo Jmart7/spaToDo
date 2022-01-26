@@ -15,28 +15,68 @@
     background-color: black;
 }
 
-.addTodo {
-    display: flex;
+.form {
+    display: inline-block;
+}
+
+.addButton {
+    margin-left: 1em;
+}
+
+.editButton {
+    gap: 0.5em;
+    
 }
 
 
 .form-control {
+    border: red solid 1px;
     font-family: system-ui, sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
     line-height: 1.1;
-    display: grid;
+    display: inline-block;
     grid-template-columns: 1.15em auto;
     gap: 0.5em;
     appearance: none;
     margin-top: 0.8em;
+    width: 1.5em;
+}
+
+.form-controlTitle {
+    border: red solid 1px;
+    font-family: system-ui, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: flexbox;
+    grid-template-columns: 1.15em auto;
+    gap: 0.5em;
+    appearance: none;
+    margin-top: 0.8em;
+    margin-left: 0.5em;
+}
+
+.form-controlDelete {
+    border: red solid 1px;
+    font-family: system-ui, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: block;
+    grid-template-columns: 1.15em auto;
+    gap: 0.5em;
+    appearance: none;
+    margin-top: 0.8em;
+    width:fit-content;
+}
+.inputCheckbox {
+    border: red solid 1px
 }
 
 input[type="checkbox"] {
-    /* border: white solid 5px; */
     appearance: none;
     background-color: #fff;
-    /* margin-top: 0.8em; */
     font: inherit;
     color: currentColor;
     width: 1.15em;
@@ -46,6 +86,7 @@ input[type="checkbox"] {
     transform: translateY(-0.075em);
     display: grid;
     place-content: center;
+    cursor: pointer;
 }
 
 .form-control + .form-control {
@@ -53,6 +94,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]::before {
+    border: red solid 1px;
     content: "";
     width: 0.65em;
     height: 0.65em;
@@ -65,9 +107,11 @@ input[type="checkbox"]::before {
 }
 
 input[type="checkbox"]:checked::before {
+    border: red solid 1px;
     transform: scale(1);
 }
 
 .deleteButton {
     display: flex;
+    cursor: pointer;    
 }
