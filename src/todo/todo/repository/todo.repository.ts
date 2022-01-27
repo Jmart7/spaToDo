@@ -20,14 +20,18 @@ export class TodosRepository {
         })
     }
 
-    updateTodos(idToEdit: number, newTodo: string) {
-        this.todoDatabase.update(
-            idToEdit,
-            {
-                title: newTodo
-            }
-        )
+    async updateTodos(todoUpdated: Todo){
+        return await this.todoDatabase.update(todoUpdated.id, {title:todoUpdated.title});
     }
+
+    // updateTodos(idToEdit: number, newTodo: string) {
+    //     this.todoDatabase.update(
+    //         idToEdit,
+    //         {
+    //             title: newTodo
+    //         }
+    //     )
+    // }
 
     async deleteTodos(idToEdit: number): Promise<void> {
         await this.todoDatabase.delete(idToEdit)

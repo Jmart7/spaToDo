@@ -21,18 +21,35 @@
 
 .addButton {
     margin-left: 1em;
+    padding: 0.75em 1em;
+    background-color: greenyellow;
 }
 
-.editButton {
-    gap: 0.5em;
-    
+.editLink {
+    display: inline-flex;
+    padding: 0.15em 0.7em;
+    margin-left: 1em;
+    cursor: pointer;
+    background-color: purple; /* Green */
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1.1;
+    transition: 0.5s;
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+}
+
+.editLink:hover {
+    box-shadow: 0.25em 0.188em 0.5em rgb(206, 4, 206), 0.25em 0.188em 0.5em rgb(206, 4, 206);
 }
 
 
 .form-control {
-    border: red solid 1px;
+    /* border: red solid 1px; */
     font-family: system-ui, sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: bold;
     line-height: 1.1;
     display: inline-block;
@@ -44,7 +61,7 @@
 }
 
 .form-controlTitle {
-    border: red solid 1px;
+    /* border: red solid 1px; */
     font-family: system-ui, sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
@@ -58,20 +75,17 @@
 }
 
 .form-controlDelete {
-    border: red solid 1px;
+    /* border: red solid 1px; */
     font-family: system-ui, sans-serif;
-    font-size: 1.3rem;
+    font-size: 0.8rem;
     font-weight: bold;
     line-height: 1.1;
     display: block;
     grid-template-columns: 1.15em auto;
-    gap: 0.5em;
+    gap: 0em;
     appearance: none;
     margin-top: 0.8em;
     width:fit-content;
-}
-.inputCheckbox {
-    border: red solid 1px
 }
 
 input[type="checkbox"] {
@@ -94,7 +108,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]::before {
-    border: red solid 1px;
+    /* border: red solid 1px; */
     content: "";
     width: 0.65em;
     height: 0.65em;
@@ -107,11 +121,74 @@ input[type="checkbox"]::before {
 }
 
 input[type="checkbox"]:checked::before {
-    border: red solid 1px;
+    /* border: red solid 1px; */
     transform: scale(1);
 }
 
 .deleteButton {
-    display: flex;
-    cursor: pointer;    
+    display: inline-flex;
+    padding: 0.15em 0.7em;
+    margin-left: 0.2em;
+    cursor: pointer;
+    background-color: red; /* Green */
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;   
+    transition: 0.5s;
 }
+
+.deleteButton:hover{
+    box-shadow: 0.25em 0.188em 0.5em rgb(206, 4, 206), 0.25em 0.188em 0.5em rgb(206, 4, 206);
+}
+
+.editButton {
+    display: flex;
+    padding: 0.15em 0.7em;
+    margin: 2.1em;
+    cursor: pointer;
+    background-color: purple; /* Green */
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-size: 3em;   
+    transition: 0.5s;
+}
+
+.editButton:hover{
+    box-shadow: 0.25em 0.188em 0.5em rgb(206, 4, 206), 0.25em 0.188em 0.5em rgb(206, 4, 206);
+}
+
+.cancelButton {
+    display: flex;
+    padding: 0.15em 0.7em;
+    margin:1.45em;
+    cursor: pointer;
+    background-color: purple; /* Green */
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-size: 3em;   
+    transition: 0.5s;
+}
+
+.cancelButton:hover{
+    box-shadow: 0.25em 0.188em 0.5em rgb(206, 4, 206), 0.25em 0.188em 0.5em rgb(206, 4, 206);
+}
+
+.formToEdit {
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+}
+
+.formToAdd {
+    padding: 0.5em 1em;
+    font-size: 1em;
+}
+
+.formToAdd[type=text] {
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+  }

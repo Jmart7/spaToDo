@@ -16,9 +16,13 @@ export class TodoService {
         return this.todoRepository.addTodos(newTodo);
     }
 
-    editTodo(idToEdit: number, updatedTodo: string) {
-        return this.todoRepository.updateTodos(idToEdit, updatedTodo)
+    editTodo(updateTodo: Todo){
+        return this.todoRepository.updateTodos(updateTodo)
     }
+    
+    // editTodo(idToEdit: number, updatedTodo: string) {
+    //     return this.todoRepository.updateTodos(idToEdit, updatedTodo)
+    // }
 
     deleteTodo(idToDelete: number) {
         return this.todoRepository.deleteTodos(idToDelete);

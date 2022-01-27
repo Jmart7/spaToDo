@@ -18,10 +18,17 @@ export class TodoController {
         return this.TodoService.newTodo(createTodo);
     }
 
-    @Put(":id")
-    updateTodo(@Body() updateTodo: string, @Param() params) {
-        return this.TodoService.editTodo(params.id, updateTodo);
-    }
+    @Put(':id')
+    async update(@Param('id') id, @Body() contactData: Todo): Promise<any> {
+        contactData.id = Number(id);
+        console.log('Update #' + contactData.id)
+        return this.TodoService.editTodo(contactData);
+    }  
+    
+    // @Put(":id")
+    // updateTodo(@Body() updateTodo: string, @Param() params) {
+    //     return this.TodoService.editTodo(params.id, updateTodo);
+    // }
 
     @Delete(':id')
     deleteTodo(@Param() params) {
