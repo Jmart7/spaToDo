@@ -16,10 +16,8 @@
   "rxjs": "^7.2.0",
   "typeorm": "^0.2.41"
 },
-´´´
 
-```json
-"dependencies": {
+"dependenciesReactJS": {
   "@testing-library/jest-dom": "^5.16.1",
   "@testing-library/react": "^12.1.2",
   "@testing-library/user-event": "^13.5.0",
@@ -30,7 +28,7 @@
   "react-scripts": "^5.0.0",
   "web-vitals": "^2.1.4"
 },
-´´´
+```
 
 #### Other dependencies
 mysqld 5.7.24, node 16.13.2, React 17.0.2, NestJS 0.1.6
