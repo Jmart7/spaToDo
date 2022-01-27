@@ -43,15 +43,15 @@ Use command npm run start in the main directory to run the Backend
 
 Navigate to /reactspa folder and type npm start to turn on the Frontend
 
-####Database
+#### Database
 
 I used MAMP to connect to MySQL Database
 
-####Finally
+#### Finally
 
 Go to "http://localhost:3000" and you will be able to see the Spa already working
 
-###Things i wanted to do
+### Things i wanted to do
 
 <ul>
   <li>Dockerize the project</li>
